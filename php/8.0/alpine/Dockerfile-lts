@@ -5,7 +5,7 @@ ARG VCS_REF
 
 LABEL maintainer="Eduardo Bizarro <edbizarro@gmail.com>" \
       PHP="8.0" \
-      NODE="14.15.0" \
+      NODE="16" \
       org.label-schema.name="edbizarro/gitlab-ci-pipeline-php" \
       org.label-schema.description=":coffee: Docker images for build and test PHP applications with Gitlab CI (or any other CI plataform!)" \
       org.label-schema.build-date=$BUILD_DATE \
@@ -29,8 +29,8 @@ WORKDIR /tmp
 # COPY INSTALL SCRIPTS
 COPY ./php/scripts/alpine/*.sh /tmp/
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-COPY --from=mhart/alpine-node:14 /usr/bin/node /usr/bin/
-COPY --from=mhart/alpine-node:14 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/* /usr/lib/
+COPY --from=mhart/alpine-node:16 /usr/bin/node /usr/bin/
+COPY --from=mhart/alpine-node:16 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/* /usr/lib/
 
 RUN chmod +x /tmp/*.sh \
     && adduser -D $IMAGE_USER \
