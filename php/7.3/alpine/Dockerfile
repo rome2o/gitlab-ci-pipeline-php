@@ -5,7 +5,7 @@ ARG VCS_REF
 
 LABEL maintainer="Eduardo Bizarro <edbizarro@gmail.com>" \
   PHP="7.3" \
-  NODE="14" \
+  NODE="16" \
   org.label-schema.name="edbizarro/gitlab-ci-pipeline-php" \
   org.label-schema.description=":coffee: Docker images for build and test PHP applications with Gitlab CI (or any other CI plataform!)" \
   org.label-schema.build-date=$BUILD_DATE \
@@ -19,7 +19,7 @@ ENV HOME=/home/$IMAGE_USER
 ENV COMPOSER_HOME=$HOME/.composer
 ENV PATH=$HOME/.yarn/bin:$PATH
 ENV GOSS_VERSION="0.3.16"
-ENV NODE_VERSION=14
+ENV NODE_VERSION=16
 ENV NPM_VERSION=6
 ENV YARN_VERSION=latest
 ENV PHP_VERSION=7.3
